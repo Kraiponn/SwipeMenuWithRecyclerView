@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.widget.Toast;
 
+import com.tubb.smrv.SwipeMenuLayout;
 import com.tubb.smrv.SwipeMenuRecyclerView;
 
 import java.util.ArrayList;
@@ -73,7 +74,10 @@ public class SecondActivity extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new AppAdapter.onItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
+                /*SwipeMenuLayout swipeMenuLayout;
+                swipeMenuLayout = (SwipeMenuLayout) view;*/
                 int id = view.getId();
+
                 if (id == R.id.btDelete) {
                     Toast.makeText(mContext,
                             "Delete Posistion " + position,
@@ -88,6 +92,8 @@ public class SecondActivity extends AppCompatActivity {
                     Toast.makeText(mContext,
                             "Else " + position,
                             Toast.LENGTH_SHORT).show();
+                    /*swipeMenuLayout.setOpenInterpolator(mRecyclerView.getOpenInterpolator());
+                    swipeMenuLayout.setCloseInterpolator(mRecyclerView.getCloseInterpolator());*/
                 }
             }
         });

@@ -53,9 +53,10 @@ public class AppAdapter extends RecyclerView.Adapter{
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         User user = users.get(position);
         MyViewHolder myViewHolder = (MyViewHolder)holder;
+        myViewHolder.tvName.setText(user.getUserName());
 
-        myViewHolder.tvName.setText(user.userName);
-        myViewHolder.tvSwipeEnable.setVisibility(View.GONE);
+        //myViewHolder.tvName.setText(user.userName);
+        //myViewHolder.tvSwipeEnable.setVisibility(View.GONE);
 
         /*SwipeMenuLayout itemView = (SwipeMenuLayout) myViewHolder.itemView;
         itemView.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +117,7 @@ public class AppAdapter extends RecyclerView.Adapter{
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        public SwipeMenuLayout swipeMenuLayout;
+        //public SwipeMenuLayout swipeMenuLayout;
         public TextView tvName;
         public TextView tvSwipeEnable;
         public View btGood;
@@ -131,14 +132,15 @@ public class AppAdapter extends RecyclerView.Adapter{
             btEdit = itemView.findViewById(R.id.btEdit);
             btDelete = itemView.findViewById(R.id.btDelete);
 
-            swipeMenuLayout = (SwipeMenuLayout) itemView;
-            /*swipeMenuLayout.setOnClickListener(new View.OnClickListener() {
+            /*swipeMenuLayout = (SwipeMenuLayout) itemView;
+            swipeMenuLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mCallBack.onItemClick(getAdapterPosition(), v);
                 }
             });*/
-            btGood.setVisibility(View.GONE);
+
+            //btGood.setVisibility(View.GONE);
             btEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -156,8 +158,8 @@ public class AppAdapter extends RecyclerView.Adapter{
                 }
             });
 
-            /*itemView.setOpenInterpolator(mRecyclerView.getOpenInterpolator());
-            itemView.setCloseInterpolator(mRecyclerView.getCloseInterpolator());*/
+            /*swipeMenuLayout.setOpenInterpolator(mRecyclerView.getOpenInterpolator());
+            swipeMenuLayout.setCloseInterpolator(mRecyclerView.getCloseInterpolator());*/
         }
     }
 
